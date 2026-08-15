@@ -1,0 +1,224 @@
+/* ============================================
+глобальні скидання стилів
+============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+legend {
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans', 'Amethysta', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #0B1D26;
+  font-weight: 700;
+}
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* Планшет */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* Мобільний */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+.header-nav {
+  padding: 65px 80px 0px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-nav-btn {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-div {
+  display: flex;
+  gap: 40px;
+}
+
+.header-nav-btn-icon {
+  margin-right: 8px;
+}
+
+.header-logo {
+  font-family: 'Amethysta';
+  font-size: 32px;
+}
+
+.hero {
+  display: flex;
+  padding: 200px 80px 840px 80px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-headline {
+  width: 950px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hero-content-list {
+ 
+}
+
+.hero-media-text {
+  
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.hero-headline-link-hiking {
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.33em;
+  text-transform: uppercase;
+  color: #fbd784;
+}
+
+.hero-headline-link-hiking::before {
+    content: "";
+    display: inline-block;
+    width: 72px;
+    height: 2px;
+    background: currentColor;
+    margin-right: 32px;
+    vertical-align: middle;
+}
+
+.hero-headline-title {
+  font-family: 'Amethysta';
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 114%;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.hero-headline-link {
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  margin-right: 16px;
+}
+
+.hero-headline-div {
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 24px;
+}
