@@ -145,9 +145,10 @@ body {
   margin-right: 8px;
 }
 
-.header-logo {
+.header-logo, .footer-logo {
   font-family: 'Amethysta';
   font-size: 32px;
+  
 }
 
 .hero {
@@ -169,10 +170,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 32px;
-}
-
-.hero-content-list {
- 
 }
 
 .hero-media-text {
@@ -213,6 +210,7 @@ body {
   font-size: 18px;
   color: #fff;
   margin-right: 16px;
+  display: block;
 }
 
 .hero-headline-div {
@@ -221,4 +219,110 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   height: 24px;
+}
+.showcase-card {
+  display: flex;
+  padding: 0px 229px 200px 229px;
+  gap: 114px;
+}
+
+.showcase-card-div-link::before {
+    content: "";
+    display: inline-block;
+    width: 72px;
+    height: 2px;
+    background: currentColor;
+    margin-right: 32px;
+    vertical-align: middle;
+    
+}
+
+.showcase-card-div-link {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.33em;
+    text-transform: uppercase;
+    color: #fbd784;
+    margin-bottom: 27px;
+}
+
+.showcase-card-div-title {
+  font-family: 'Amethysta';
+  font-weight: 600;
+  font-size: 75px;
+  line-height: 114%;
+  color: #fff;
+  margin-bottom: 27px;
+}
+
+.showcase-card-div-text {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 178%;
+  color: #fff;
+  margin-bottom: 27px;
+}
+
+.showcase-card-link {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 18px;
+    letter-spacing: 0.33em;
+    color: #fbd784;
+}
+
+.showcase-card-link-icon, .hero-headline-link-svg {
+  transform: rotate(-90deg);
+}
+
+.showcase-card-div-noumder {
+  font-size: 200px;
+  font-weight: 700;
+  color: rgba(155, 155, 155, 0.349);
+  position: absolute;
+  top: -160px;
+  left: -120px;
+}
+
+.showcase-card-div {
+  position: relative;
+}
+
+.footer-logo {
+  margin-bottom: 24px;
+}
+
+.footer {
+  display: flex;
+  padding: 0px 229px 200px 229px;
+  justify-content: space-between;
+  gap: 114px;
+}
+
+.footer-div-slogan-text {
+  width: 303px;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.footer-div-links-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 133%;
+  color: #fbd784;
+}
+
+.footer-div-links {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer-div-links-link {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 178%;
+  color: #fff;
 }
