@@ -376,3 +376,587 @@ body {
   transform: scale(2);
   color: #fbd784;
 }
+
+.hero-content-list-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.hero-content-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ============================================
+   ADAPTIVE DESIGN
+   TABLET + MOBILE
+============================================ */
+
+
+/* ============================================
+   TABLET
+   577px — 992px
+============================================ */
+
+@media (max-width: 992px) {
+
+  /* =========================
+     CONTAINER
+  ========================= */
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+  /* =========================
+     HEADER
+  ========================= */
+
+  .header-nav {
+    padding: 40px 20px 0;
+  }
+
+  .header-nav-div {
+    gap: 24px;
+  }
+
+  .header-logo,
+  .footer-logo {
+    font-size: 28px;
+  }
+
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .hero {
+    padding: 140px 20px 500px;
+    gap: 70px;
+  }
+
+  .hero-headline {
+    width: 100%;
+    max-width: 650px;
+  }
+
+  .hero-headline-title {
+    font-size: 58px;
+    line-height: 115%;
+  }
+
+  .hero-content-list {
+    gap: 16px;
+  }
+
+  .hero-content-list-text,
+  .hero-content-list-link {
+    font-size: 16px;
+  }
+
+
+  /* =========================
+     SHOWCASE
+  ========================= */
+
+  .showcase-card,
+  .showcase-card:nth-child(2) {
+    padding: 0 80px 150px;
+    gap: 70px;
+  }
+
+  .showcase-card-div {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .showcase-card-picture {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .showcase-card-div-title {
+    font-size: 55px;
+    line-height: 115%;
+  }
+
+  .showcase-card-div-text {
+    font-size: 18px;
+    line-height: 170%;
+  }
+
+  .showcase-card-div-noumder {
+    font-size: 140px;
+    top: -100px;
+    left: -70px;
+  }
+
+
+  /* =========================
+     FOOTER
+  ========================= */
+
+  .footer {
+    padding: 0 80px 100px;
+    gap: 70px;
+  }
+
+  .footer-div-slogan {
+    max-width: 300px;
+  }
+
+  .footer-div-links {
+    column-gap: 40px;
+  }
+}
+
+
+
+/* ============================================
+   MOBILE
+   до 576px
+============================================ */
+
+@media (max-width: 576px) {
+
+  /* =========================
+     CONTAINER
+  ========================= */
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+
+  /* =========================
+     HEADER
+  ========================= */
+
+  .header-nav {
+    padding: 25px 16px 0;
+    gap: 15px;
+  }
+
+  .header-logo,
+  .footer-logo {
+    font-size: 24px;
+  }
+
+  .header-nav-div {
+    gap: 10px;
+  }
+
+  .header-nav-div a,
+  .header-nav-btn {
+    font-size: 13px;
+  }
+
+  .header-nav-btn {
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  .header-nav-btn-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 0;
+  }
+
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .hero {
+    padding: 100px 16px 250px;
+
+    display: grid;
+
+    /*
+      Follow us | content | Start
+    */
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+
+    align-items: center;
+    gap: 10px;
+  }
+
+
+  /* =========================
+     FOLLOW US
+  ========================= */
+
+  .hero-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .hero-media-text {
+    writing-mode: vertical-rl;
+    font-size: 14px;
+  }
+
+  .hero-media-link {
+    display: block;
+  }
+
+  .hero-meda-svg {
+    width: 20px;
+    height: 20px;
+  }
+
+
+  /* =========================
+     HERO CONTENT
+  ========================= */
+
+  .hero-headline {
+    width: 100%;
+    gap: 24px;
+  }
+
+  .hero-headline-link-hiking {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+  }
+
+  .hero-headline-link-hiking::before {
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  .hero-headline-title {
+    font-size: 36px;
+    line-height: 115%;
+  }
+
+  .showcase-card-link {
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    gap: 10px;
+  }
+
+  .showcase-card-link-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  /* =========================
+     START / 01 / 02 / 03
+  ========================= */
+
+  .hero-content-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .hero-content-list-text {
+    writing-mode: vertical-rl;
+    font-size: 14px;
+  }
+
+  .hero-content-list-link {
+    display: block;
+    font-size: 14px;
+  }
+
+
+  /* =========================
+     SHOWCASE
+  ========================= */
+
+  .showcase-card,
+  .showcase-card:nth-child(2) {
+    flex-direction: column;
+
+    padding: 0 16px 100px;
+
+    gap: 50px;
+  }
+
+  .showcase-card-div {
+    width: 100%;
+  }
+
+  .showcase-card-picture {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .showcase-card-picture-img {
+    width: 100%;
+    height: auto;
+  }
+
+
+  /* =========================
+     SHOWCASE TITLE
+  ========================= */
+
+  .showcase-card-div-title {
+    font-size: 38px;
+    line-height: 115%;
+    margin-bottom: 20px;
+  }
+
+
+  /* =========================
+     SHOWCASE CATEGORY
+  ========================= */
+
+  .showcase-card-div-link {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+
+  .showcase-card-div-link::before {
+    width: 30px;
+    margin-right: 10px;
+  }
+
+
+  /* =========================
+     SHOWCASE TEXT
+  ========================= */
+
+  .showcase-card-div-text {
+    font-size: 16px;
+    line-height: 170%;
+    margin-bottom: 20px;
+  }
+
+
+  /* =========================
+     BIG NUMBER
+  ========================= */
+
+  .showcase-card-div-noumder {
+    font-size: 90px;
+    top: -55px;
+    left: -10px;
+  }
+
+
+  /* =========================
+     FOOTER
+  ========================= */
+
+  .footer {
+    flex-direction: column;
+
+    padding: 0 16px 60px;
+
+    gap: 50px;
+  }
+
+  .footer-div-slogan {
+    width: 100%;
+  }
+
+  .footer-logo {
+    margin-bottom: 20px;
+  }
+
+  .footer-div-slogan-text {
+    font-size: 15px;
+    line-height: 160%;
+  }
+
+
+  /* =========================
+     FOOTER LINKS
+  ========================= */
+
+  .footer-div-links {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .footer-div-links-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .footer-div-links-link {
+    font-size: 15px;
+    line-height: 160%;
+  }
+
+
+  /* =========================
+     HOVER EFFECTS
+     На телефоні прибираємо
+     сильне збільшення
+  ========================= */
+
+  .header-nav-div a:hover,
+  .header-nav-btn:hover {
+    transform: none;
+  }
+
+  .header-logo:hover,
+  .footer-logo:hover {
+    transform: scale(1.15);
+  }
+
+  .showcase-card-link:hover,
+  .showcase-card-div-title:hover {
+    transform: none;
+  }
+
+  .showcase-card-picture:hover .showcase-card-picture-img {
+    transform: none;
+  }
+}
+
+
+
+/* ============================================
+   VERY SMALL PHONES
+   до 380px
+============================================ */
+
+@media (max-width: 380px) {
+
+  /* =========================
+     HEADER
+  ========================= */
+
+  .header-nav {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .header-logo {
+    font-size: 21px;
+  }
+
+  .header-nav-div {
+    gap: 7px;
+  }
+
+  .header-nav-div a,
+  .header-nav-btn {
+    font-size: 11px;
+  }
+
+  .header-nav-btn-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .hero {
+    grid-template-columns: 30px minmax(0, 1fr) 30px;
+    gap: 5px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .hero-headline-title {
+    font-size: 30px;
+  }
+
+  .hero-headline-link-hiking {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-headline-link-hiking::before {
+    width: 22px;
+    margin-right: 7px;
+  }
+
+  .hero-media-text,
+  .hero-content-list-text {
+    font-size: 12px;
+  }
+
+  .hero-content-list-link {
+    font-size: 12px;
+  }
+
+
+  /* =========================
+     SHOWCASE
+  ========================= */
+
+  .showcase-card,
+  .showcase-card:nth-child(2) {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 80px;
+  }
+
+  .showcase-card-div-title {
+    font-size: 32px;
+  }
+
+  .showcase-card-div-text {
+    font-size: 15px;
+  }
+
+  .showcase-card-div-link {
+    font-size: 10px;
+  }
+
+  .showcase-card-div-noumder {
+    font-size: 75px;
+    top: -45px;
+    left: -5px;
+  }
+
+
+  /* =========================
+     FOOTER
+  ========================= */
+
+  .footer {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 40px;
+  }
+
+  .footer-div-links-title {
+    font-size: 18px;
+  }
+
+  .footer-div-links-link {
+    font-size: 14px;
+  }
+}
