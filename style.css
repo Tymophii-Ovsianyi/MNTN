@@ -159,13 +159,13 @@ body {
   display: flex;
   padding: 200px 80px 840px 80px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 250px;
 }
 
 .hero-media {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; 
   gap: 24px;
 }
 
@@ -177,7 +177,7 @@ body {
 }
 
 .hero-media-text {
-  
+  writing-mode: vertical-rl;
   font-weight: 700;
   font-size: 18px;
 }
@@ -217,17 +217,42 @@ body {
   display: block;
 }
 
-.hero-headline-div {
-  display: flex;
-  align-items: baseline;
-  flex-direction: row;
-  justify-content: flex-start;
-  height: 24px;
+/* Плавне збільшення елементів */
+.showcase-card-link,
+.showcase-card-div-title,
+.showcase-card-picture-img {
+  transition: transform 300ms ease;
+}
+
+/* Посилання: Scroll down + Read more */
+.showcase-card-link:hover {
+  transform: scale(1.08);
+  transform-origin: left center;
+}
+
+/* Заголовки карток */
+.showcase-card-div-title:hover {
+  transform: scale(1.05);
+  transform-origin: left center;
+}
+
+/* Картинки */
+.showcase-card-picture {
+  overflow: hidden;
+}
+
+.showcase-card-picture:hover .showcase-card-picture-img {
+  transform: scale(1.05);
 }
 .showcase-card {
   display: flex;
   padding: 0px 229px 200px 229px;
   gap: 114px;
+}
+
+.showcase-card:nth-child(2) {
+  flex-direction: row-reverse;
+  gap: 200px;
 }
 
 .showcase-card-div-link::before {
@@ -306,7 +331,6 @@ body {
 }
 
 .footer-div-slogan-text {
-  width: 303px;
   font-weight: 300;
   font-size: 18px;
 }
@@ -319,9 +343,10 @@ body {
 }
 
 .footer-div-links {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 80px;
+  row-gap: 24px;
 }
 
 .footer-div-links-link {
@@ -329,4 +354,25 @@ body {
   font-size: 18px;
   line-height: 178%;
   color: #fff;
+}
+
+.header-nav-div a,
+.header-nav-btn {
+  transition: transform 250ms ease;
+}
+
+.header-nav-div a:hover,
+.header-nav-btn:hover {
+  transform: scale(1.08);
+}
+
+.header-logo,
+.footer-logo {
+  transition: transform 700ms ease, color 700ms ease;
+}
+
+.header-logo:hover,
+.footer-logo:hover {
+  transform: scale(2);
+  color: #fbd784;
 }
