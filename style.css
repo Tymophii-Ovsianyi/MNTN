@@ -417,9 +417,7 @@ body {
 
 @media (max-width: 992px) {
 
-  /* =========================
-     CONTAINER
-  ========================= */
+  /* CONTAINER */
 
   .container {
     padding-left: 20px;
@@ -442,6 +440,11 @@ body {
   .header-logo,
   .footer-logo {
     font-size: 28px;
+  }
+
+  .header-nav-div a,
+  .header-nav-btn {
+    font-size: 16px;
   }
 
 
@@ -554,26 +557,45 @@ body {
 
   .header-nav {
     padding: 25px 16px 0;
-    gap: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 16px;
   }
 
-  .header-logo,
-  .footer-logo {
-    font-size: 24px;
+  /* Логотип */
+
+  .header-logo {
+    font-size: 22px;
   }
+
+  /* Equipment / About us / Blog */
 
   .header-nav-div {
-    gap: 10px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 8px;
   }
 
-  .header-nav-div a,
-  .header-nav-btn {
+  .header-nav-div a {
     font-size: 13px;
+    line-height: 1.3;
   }
 
+  /* Account */
+
   .header-nav-btn {
-    gap: 4px;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+
+    font-size: 13px;
+    gap: 5px;
   }
 
   .header-nav-btn-icon {
@@ -592,9 +614,6 @@ body {
 
     display: grid;
 
-    /*
-      Follow us | content | Start
-    */
     grid-template-columns: 40px minmax(0, 1fr) 40px;
 
     align-items: center;
@@ -610,12 +629,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     gap: 18px;
   }
 
   .hero-media-text {
     writing-mode: vertical-rl;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .hero-media-link {
@@ -629,27 +649,27 @@ body {
 
 
   /* =========================
-     HERO CONTENT
+     HERO HEADLINE
   ========================= */
 
   .hero-headline {
     width: 100%;
-    gap: 24px;
+    gap: 20px;
   }
 
   .hero-headline-link-hiking {
-    font-size: 12px;
-    letter-spacing: 0.15em;
+    font-size: 11px;
+    letter-spacing: 0.12em;
     white-space: nowrap;
   }
 
   .hero-headline-link-hiking::before {
-    width: 30px;
+    width: 28px;
     margin-right: 10px;
   }
 
   .hero-headline-title {
-    font-size: 36px;
+    font-size: 32px;
     line-height: 115%;
   }
 
@@ -673,22 +693,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     gap: 14px;
   }
 
   .hero-content-list-text {
     writing-mode: vertical-rl;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .hero-content-list-link {
     display: block;
-    font-size: 14px;
+    font-size: 13px;
   }
 
 
   /* =========================
-     SHOWCASE
+     SHOWCASE CARDS
   ========================= */
 
   .showcase-card,
@@ -697,7 +718,7 @@ body {
 
     padding: 0 16px 100px;
 
-    gap: 50px;
+    gap: 45px;
   }
 
   .showcase-card-div {
@@ -716,24 +737,13 @@ body {
 
 
   /* =========================
-     SHOWCASE TITLE
-  ========================= */
-
-  .showcase-card-div-title {
-    font-size: 38px;
-    line-height: 115%;
-    margin-bottom: 20px;
-  }
-
-
-  /* =========================
      SHOWCASE CATEGORY
   ========================= */
 
   .showcase-card-div-link {
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 0.15em;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   .showcase-card-div-link::before {
@@ -743,12 +753,25 @@ body {
 
 
   /* =========================
+     SHOWCASE TITLE
+  ========================= */
+
+  .showcase-card-div-title {
+    font-size: 36px;
+    line-height: 115%;
+
+    margin-bottom: 20px;
+  }
+
+
+  /* =========================
      SHOWCASE TEXT
   ========================= */
 
   .showcase-card-div-text {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 170%;
+
     margin-bottom: 20px;
   }
 
@@ -759,6 +782,7 @@ body {
 
   .showcase-card-div-noumder {
     font-size: 90px;
+
     top: -55px;
     left: -10px;
   }
@@ -773,7 +797,7 @@ body {
 
     padding: 0 16px 60px;
 
-    gap: 50px;
+    gap: 45px;
   }
 
   .footer-div-slogan {
@@ -781,6 +805,7 @@ body {
   }
 
   .footer-logo {
+    font-size: 22px;
     margin-bottom: 20px;
   }
 
@@ -799,12 +824,11 @@ body {
 
     grid-template-columns: 1fr;
 
-    gap: 14px;
+    gap: 12px;
   }
 
   .footer-div-links-title {
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 19px;
   }
 
   .footer-div-links-link {
@@ -814,19 +838,14 @@ body {
 
 
   /* =========================
-     HOVER EFFECTS
-     На телефоні прибираємо
+     HOVER
+     На телефоні вимикаємо
      сильне збільшення
   ========================= */
 
   .header-nav-div a:hover,
   .header-nav-btn:hover {
     transform: none;
-  }
-
-  .header-logo:hover,
-  .footer-logo:hover {
-    transform: scale(1.15);
   }
 
   .showcase-card-link:hover,
@@ -836,6 +855,11 @@ body {
 
   .showcase-card-picture:hover .showcase-card-picture-img {
     transform: none;
+  }
+
+  .header-logo:hover,
+  .footer-logo:hover {
+    transform: scale(1.1);
   }
 }
 
@@ -853,12 +877,12 @@ body {
   ========================= */
 
   .header-nav {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 20px 10px 0;
+    gap: 14px;
   }
 
   .header-logo {
-    font-size: 21px;
+    font-size: 20px;
   }
 
   .header-nav-div {
@@ -867,7 +891,7 @@ body {
 
   .header-nav-div a,
   .header-nav-btn {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .header-nav-btn-icon {
@@ -882,33 +906,37 @@ body {
 
   .hero {
     grid-template-columns: 30px minmax(0, 1fr) 30px;
+
     gap: 5px;
 
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 80px 10px 200px;
   }
 
   .hero-headline-title {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .hero-headline-link-hiking {
-    font-size: 10px;
-    letter-spacing: 0.12em;
+    font-size: 9px;
+    letter-spacing: 0.1em;
   }
 
   .hero-headline-link-hiking::before {
-    width: 22px;
-    margin-right: 7px;
+    width: 20px;
+    margin-right: 6px;
   }
 
   .hero-media-text,
   .hero-content-list-text {
-    font-size: 12px;
+    font-size: 11px;
+  }
+
+  .hero-content-list {
+    gap: 10px;
   }
 
   .hero-content-list-link {
-    font-size: 12px;
+    font-size: 11px;
   }
 
 
@@ -921,14 +949,16 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 80px;
+
+    gap: 40px;
   }
 
   .showcase-card-div-title {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .showcase-card-div-text {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .showcase-card-div-link {
@@ -937,6 +967,7 @@ body {
 
   .showcase-card-div-noumder {
     font-size: 75px;
+
     top: -45px;
     left: -5px;
   }
@@ -952,11 +983,15 @@ body {
     padding-bottom: 40px;
   }
 
+  .footer-logo {
+    font-size: 20px;
+  }
+
   .footer-div-links-title {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .footer-div-links-link {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
