@@ -98,6 +98,10 @@ body {
   line-height: 1.5;
   color: #fff;
   background-color: #0B1D26;
+  background-image: url("./images/fon.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
   font-weight: 700;
 }
 
