@@ -1,72 +1,103 @@
 /* ============================================
-глобальні скидання стилів
+   GLOBAL RESET
 ============================================ */
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
+
 body {
-  margin: 0;
-  min-width: 320px;
-  font-family: inherit;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    min-width: 320px;
+
+    font-family: 'Noto Sans', 'Amethysta', sans-serif;
+
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 700;
+
+    color: #fff;
+    background-color: #0B1D26;
+
+    background-image: url("./images/fon.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    overflow-x: hidden;
 }
+
 
 ul,
 ol {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    list-style-type: none;
 }
 
+
 a {
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
+    display: inline-block;
+
+    text-decoration: none;
+    color: inherit;
 }
+
 
 button,
 input,
 textarea,
 select {
-  font: inherit;
-  color: inherit;
+    font: inherit;
+    color: inherit;
 }
 
+
 button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  padding: 0;
+    cursor: pointer;
+
+    border: none;
+    background: none;
+    padding: 0;
 }
+
 
 input,
 textarea {
-  outline: none;
+    outline: none;
 }
+
 
 textarea {
-  resize: none;
+    resize: none;
 }
+
 
 fieldset {
-  padding: 0;
-  margin: 0;
-  border: none;
+    padding: 0;
+    margin: 0;
+    border: none;
 }
 
+
 legend {
-  padding: 0;
+    padding: 0;
 }
+
 
 h1,
 h2,
@@ -75,339 +106,676 @@ h4,
 h5,
 h6,
 p {
-  margin: 0;
+    margin: 0;
 }
+
 
 img,
 svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
+    display: block;
+
+    max-width: 100%;
+    height: auto;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Noto Sans', 'Amethysta', sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #fff;
-  background-color: #0B1D26;
-  background-image: url("./images/fon.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: 100% auto;
-  font-weight: 700;
-}
+/* ============================================
+   CONTAINER
+============================================ */
 
 .container {
-  width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: 0 24px;
-  box-sizing: border-box;
+    width: 100%;
+    max-width: 1920px;
+
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
-/* Планшет */
-@media (max-width: 992px) {
-  .container {
-    padding: 0 20px;
-  }
-}
 
-/* Мобільний */
-@media (max-width: 576px) {
-  .container {
-    padding: 0 16px;
-  }
-}
+/* ============================================
+   HEADER
+============================================ */
 
 .header-nav {
-  padding: 65px 80px 0px 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    padding: 45px 60px 0;
 
-.header-nav-btn {
-  gap: 8px;
-  display: flex;
-  align-items: center;
-}
-
-.header-nav-div {
-  display: flex;
-  gap: 40px;
-}
-
-.header-nav-btn-icon {
-  margin-right: 8px;
-}
-
-.header-logo, .footer-logo {
-  font-family: 'Amethysta';
-  font-size: 32px;
-  
-}
-
-.hero {
-  display: flex;
-  padding: 200px 80px 840px 80px;
-  align-items: center;
-  justify-content: center;
-  gap: 250px;
-}
-
-.hero-media {
-  display: flex;
-  flex-direction: column; 
-  gap: 24px;
-}
-
-.hero-headline {
-  width: 950px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.hero-media-text {
-  writing-mode: vertical-rl;
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.hero-headline-link-hiking {
-  font-weight: 800;
-  font-size: 18px;
-  letter-spacing: 0.33em;
-  text-transform: uppercase;
-  color: #fbd784;
-}
-
-.hero-headline-link-hiking::before {
-    content: "";
-    display: inline-block;
-    width: 72px;
-    height: 2px;
-    background: currentColor;
-    margin-right: 32px;
-    vertical-align: middle;
-}
-
-.hero-headline-title {
-  font-family: 'Amethysta';
-  font-weight: 600;
-  font-size: 80px;
-  line-height: 114%;
-  text-transform: capitalize;
-  color: #fff;
-}
-
-.hero-headline-link {
-  font-weight: 700;
-  font-size: 18px;
-  color: #fff;
-  margin-right: 16px;
-  display: block;
-}
-
-/* Плавне збільшення елементів */
-.showcase-card-link,
-.showcase-card-div-title,
-.showcase-card-picture-img {
-  transition: transform 300ms ease;
-}
-
-/* Посилання: Scroll down + Read more */
-.showcase-card-link:hover {
-  transform: scale(1.08);
-  transform-origin: left center;
-}
-
-/* Заголовки карток */
-.showcase-card-div-title:hover {
-  transform: scale(1.05);
-  transform-origin: left center;
-}
-
-/* Картинки */
-.showcase-card-picture {
-  overflow: hidden;
-}
-
-.showcase-card-picture:hover .showcase-card-picture-img {
-  transform: scale(1.05);
-}
-.showcase-card {
-  display: flex;
-  padding: 0px 229px 200px 229px;
-  gap: 114px;
-}
-
-.showcase-card:nth-child(2) {
-  flex-direction: row-reverse;
-  gap: 200px;
-}
-
-.showcase-card-div-link::before {
-    content: "";
-    display: inline-block;
-    width: 72px;
-    height: 2px;
-    background: currentColor;
-    margin-right: 32px;
-    vertical-align: middle;
-    
-}
-
-.showcase-card-div-link {
-    font-weight: 800;
-    font-size: 18px;
-    letter-spacing: 0.33em;
-    text-transform: uppercase;
-    color: #fbd784;
-    margin-bottom: 27px;
-}
-
-.showcase-card-div-title {
-  font-family: 'Amethysta';
-  font-weight: 600;
-  font-size: 75px;
-  line-height: 114%;
-  color: #fff;
-  margin-bottom: 27px;
-}
-
-.showcase-card-div-text {
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 178%;
-  color: #fff;
-  margin-bottom: 27px;
-}
-
-.showcase-card-link {
-    font-weight: 700;
     display: flex;
     align-items: center;
-    gap: 16px;
-    font-size: 18px;
-    letter-spacing: 0.33em;
-    color: #fbd784;
+    justify-content: space-between;
 }
 
-.showcase-card-link-icon, .hero-headline-link-svg {
-  transform: rotate(-90deg);
-}
 
-.showcase-card-div-noumder {
-  font-size: 200px;
-  font-weight: 700;
-  color: rgba(155, 155, 155, 0.349);
-  position: absolute;
-  top: -160px;
-  left: -120px;
-}
-
-.showcase-card-div {
-  position: relative;
-}
-
-.footer-logo {
-  margin-bottom: 24px;
-}
-
-.footer {
-  display: flex;
-  padding: 0px 229px 200px 229px;
-  justify-content: space-between;
-  gap: 114px;
-}
-
-.footer-div-slogan-text {
-  font-weight: 300;
-  font-size: 18px;
-}
-
-.footer-div-links-title {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 133%;
-  color: #fbd784;
-}
-
-.footer-div-links {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 80px;
-  row-gap: 24px;
-}
-
-.footer-div-links-link {
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 178%;
-  color: #fff;
-}
-
-.header-nav-div a,
 .header-nav-btn {
-  transition: transform 250ms ease;
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
 }
 
-.header-nav-div a:hover,
-.header-nav-btn:hover {
-  transform: scale(1.08);
+
+.header-nav-div {
+    display: flex;
+
+    gap: 35px;
 }
+
+
+.header-nav-btn-icon {
+    margin-right: 8px;
+}
+
 
 .header-logo,
 .footer-logo {
-  transition: transform 700ms ease, color 700ms ease;
+    font-family: 'Amethysta';
+
+    font-size: 30px;
 }
+
+
+/* ============================================
+   HERO
+============================================ */
+
+.hero {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 150px;
+
+    /*
+       Було 840px.
+       Саме це створювало величезний простір
+       перед showcase.
+    */
+    padding: 150px 60px 250px;
+}
+
+
+.hero-media {
+    display: flex;
+    flex-direction: column;
+  
+
+    
+}
+
+
+.hero-headline {
+    width: min(850px, 100%);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+.hero-media-text {
+    writing-mode: vertical-rl;
+
+    font-weight: 700;
+    font-size: 17px;
+}
+
+
+.hero-headline-link-hiking {
+    font-weight: 800;
+    font-size: 17px;
+
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+
+    color: #fbd784;
+}
+
+
+.hero-headline-link-hiking::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 65px;
+    height: 2px;
+
+    background: currentColor;
+
+    margin-right: 25px;
+
+    vertical-align: middle;
+}
+
+
+.hero-headline-title {
+    font-family: 'Amethysta';
+
+    font-weight: 600;
+
+    font-size: clamp(50px, 4.5vw, 72px);
+
+    line-height: 114%;
+
+    text-transform: capitalize;
+
+    color: #fff;
+}
+
+
+.hero-headline-link {
+    font-weight: 700;
+
+    font-size: 17px;
+
+    color: #fff;
+
+    margin-right: 16px;
+}
+
+
+/* ============================================
+   HERO CONTENT
+============================================ */
+
+.hero-content-list, .hero-media {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.hero-content-list-text, .hero-media-text {
+    writing-mode: vertical-rl;
+
+    transform: rotate(180deg);
+
+    font-weight: 700;
+    font-size: 17px;
+}
+
+
+/* ============================================
+   SHOWCASE
+============================================ */
+
+.showcase {
+    width: 100%;
+
+    /*
+       Головне:
+       showcase не може створювати
+       горизонтальний scrollbar.
+    */
+    overflow: hidden;
+}
+
+
+/* ============================================
+   SLIDER WINDOW
+============================================ */
+
+.showcase-slider {
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+/* ============================================
+   SLIDES LIST
+============================================ */
+
+.showcase-list {
+    display: flex;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    /*
+       Всі 3 картки стоять в один ряд.
+    */
+    transform: translateX(0);
+
+    transition: transform 500ms ease-in-out;
+
+    /*
+       Дозволяємо вертикальний scroll,
+       але горизонтальний контролює slider.
+    */
+    touch-action: pan-y;
+
+    will-change: transform;
+}
+
+
+/* ============================================
+   CARD
+============================================ */
+
+.showcase-card {
+    /*
+       КОЖНА картка = рівно ширина viewport.
+    */
+    flex: 0 0 100%;
+
+    width: 100%;
+
+    /*
+       Компактна висота.
+    */
+    min-height: 550px;
+
+    /*
+       Текст + картинка.
+    */
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    /*
+       Було:
+       229px 200px
+
+       Стало значно менше.
+    */
+    padding: 20px 80px 40px;
+
+    gap: 60px;
+
+    /*
+       Забороняємо картці роздуватися.
+    */
+    overflow: hidden;
+}
+
+
+/* ============================================
+   SECOND CARD
+============================================ */
+
+.showcase-card:nth-child(2) {
+    flex-direction: row-reverse;
+
+    gap: 60px;
+}
+
+
+/* ============================================
+   TEXT BLOCK
+============================================ */
+
+.showcase-card-div {
+    position: relative;
+
+    width: 52%;
+    max-width: 700px;
+
+    min-width: 0;
+}
+
+
+/* ============================================
+   CATEGORY LINK
+============================================ */
+
+.showcase-card-div-link {
+    font-weight: 800;
+
+    font-size: 16px;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+
+    color: #fbd784;
+
+    margin-bottom: 18px;
+}
+
+
+.showcase-card-div-link::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 60px;
+    height: 2px;
+
+    background: currentColor;
+
+    margin-right: 20px;
+
+    vertical-align: middle;
+}
+
+
+/* ============================================
+   TITLE
+============================================ */
+
+.showcase-card-div-title {
+    font-family: 'Amethysta';
+
+    font-weight: 600;
+
+    /*
+       Замість 75px.
+       Тепер розмір залежить від екрану.
+    */
+    font-size: clamp(42px, 4vw, 64px);
+
+    line-height: 112%;
+
+    color: #fff;
+
+    margin-bottom: 20px;
+}
+
+
+/* ============================================
+   TEXT
+============================================ */
+
+.showcase-card-div-text {
+    font-weight: 400;
+
+    /*
+       Замість 22px.
+    */
+    font-size: 17px;
+
+    line-height: 165%;
+
+    color: #fff;
+
+    margin-bottom: 20px;
+
+    /*
+       Обмежуємо ширину тексту,
+       щоб він не розтягував картку.
+    */
+    max-width: 680px;
+}
+
+
+/* ==================================
+==========
+   READ MORE
+============================================ */
+
+.showcase-card-link {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-weight: 700;
+
+    font-size: 16px;
+
+    letter-spacing: 0.25em;
+
+    color: #fbd784;
+}
+
+
+.showcase-card-link-icon {
+    width: 18px;
+    height: 18px;
+
+    transform: rotate(-90deg);
+}
+
+
+/* ============================================
+   BIG NUMBER
+============================================ */
+
+.showcase-card-div-noumder {
+    position: absolute;
+
+    /*
+       Було 200px.
+       Зменшуємо.
+    */
+    font-size: 140px;
+
+    font-weight: 700;
+
+    color: rgba(155, 155, 155, 0.25);
+
+    top: -95px;
+    left: -65px;
+
+    pointer-events: none;
+}
+
+
+/* ============================================
+   IMAGE
+============================================ */
+
+.showcase-card-picture {
+    /*
+       Картинка не займає половину екрану.
+    */
+    width: 38%;
+
+    max-width: 460px;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+
+.showcase-card-picture-img {
+    display: block;
+
+    width: 100%;
+
+    /*
+       Обмежуємо висоту.
+       Це дуже важливо для твого випадку.
+    */
+    max-height: 500px;
+
+    object-fit: cover;
+
+    transition: transform 300ms ease;
+}
+
+
+/* ============================================
+   HOVER EFFECTS
+============================================ */
+
+.showcase-card-link,
+.showcase-card-div-title {
+    transition: transform 300ms ease;
+}
+
+
+.showcase-card-link:hover {
+    transform: scale(1.05);
+
+    transform-origin: left center;
+}
+
+
+.showcase-card-div-title:hover {
+    transform: scale(1.02);
+
+    transform-origin: left center;
+}
+
+
+.showcase-card-picture:hover .showcase-card-picture-img {
+    transform: scale(1.04);
+}
+
+
+/* ============================================
+   SLIDER BUTTONS
+============================================ */
+
+.showcase-buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    /*
+       Було 40px.
+       Тепер кнопки практично одразу
+       під карткою.
+    */
+    margin-top: 0;
+
+    padding-bottom: 25px;
+}
+
+
+.showcase-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid #fbd784;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #fbd784;
+
+    font-size: 20px;
+
+    transition:
+        background-color 200ms ease,
+        color 200ms ease,
+        transform 200ms ease;
+}
+
+
+.showcase-btn:hover {
+    background-color: #fbd784;
+
+    color: #000;
+}
+
+
+.showcase-btn:active {
+    transform: scale(0.9);
+}
+
+
+/* ============================================
+   FOOTER
+============================================ */
+
+.footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 80px;
+
+    padding: 0 120px 100px;
+}
+
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+
+.footer-div-slogan-text {
+    font-weight: 300;
+
+    font-size: 17px;
+}
+
+
+.footer-div-links-title {
+    font-weight: 700;
+
+    font-size: 22px;
+
+    line-height: 133%;
+
+    color: #fbd784;
+}
+
+
+.footer-div-links {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 60px;
+
+    row-gap: 18px;
+}
+
+
+.footer-div-links-link {
+    font-weight: 300;
+
+    font-size: 17px;
+
+    line-height: 170%;
+
+    color: #fff;
+}
+
+
+/* ============================================
+   HEADER HOVER
+============================================ */
+
+.header-nav-div a,
+.header-nav-btn {
+    transition: transform 250ms ease;
+}
+
+
+.header-nav-div a:hover,
+.header-nav-btn:hover {
+    transform: scale(1.05);
+}
+
+
+.header-logo,
+.footer-logo {
+    transition:
+        transform 700ms ease,
+        color 700ms ease;
+}
+
 
 .header-logo:hover,
 .footer-logo:hover {
-  transform: scale(2);
-  color: #fbd784;
+    transform: scale(1.4);
+
+    color: #fbd784;
 }
-
-.hero-content-list-text {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-weight: 700;
-  font-size: 18px;
-}
-
-.hero-content-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /* ============================================
-   ADAPTIVE DESIGN
-   TABLET + MOBILE
-============================================ */
 
 
 /* ============================================
@@ -417,121 +785,127 @@ body {
 
 @media (max-width: 992px) {
 
-  /* CONTAINER */
+    /* HEADER */
 
-  .container {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-
-  /* =========================
-     HEADER
-  ========================= */
-
-  .header-nav {
-    padding: 40px 20px 0;
-  }
-
-  .header-nav-div {
-    gap: 24px;
-  }
-
-  .header-logo,
-  .footer-logo {
-    font-size: 28px;
-  }
-
-  .header-nav-div a,
-  .header-nav-btn {
-    font-size: 16px;
-  }
+    .header-nav {
+        padding: 35px 30px 0;
+    }
 
 
-  /* =========================
-     HERO
-  ========================= */
-
-  .hero {
-    padding: 140px 20px 500px;
-    gap: 70px;
-  }
-
-  .hero-headline {
-    width: 100%;
-    max-width: 650px;
-  }
-
-  .hero-headline-title {
-    font-size: 58px;
-    line-height: 115%;
-  }
-
-  .hero-content-list {
-    gap: 16px;
-  }
-
-  .hero-content-list-text,
-  .hero-content-list-link {
-    font-size: 16px;
-  }
+    .header-nav-div {
+        gap: 20px;
+    }
 
 
-  /* =========================
-     SHOWCASE
-  ========================= */
-
-  .showcase-card,
-  .showcase-card:nth-child(2) {
-    padding: 0 80px 150px;
-    gap: 70px;
-  }
-
-  .showcase-card-div {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .showcase-card-picture {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .showcase-card-div-title {
-    font-size: 55px;
-    line-height: 115%;
-  }
-
-  .showcase-card-div-text {
-    font-size: 18px;
-    line-height: 170%;
-  }
-
-  .showcase-card-div-noumder {
-    font-size: 140px;
-    top: -100px;
-    left: -70px;
-  }
+    .header-logo,
+    .footer-logo {
+        font-size: 26px;
+    }
 
 
-  /* =========================
-     FOOTER
-  ========================= */
+    /* HERO */
 
-  .footer {
-    padding: 0 80px 100px;
-    gap: 70px;
-  }
+    .hero {
+        padding: 120px 30px 180px;
 
-  .footer-div-slogan {
-    max-width: 300px;
-  }
+        gap: 60px;
+    }
 
-  .footer-div-links {
-    column-gap: 40px;
-  }
+
+    .hero-headline {
+        max-width: 600px;
+    }
+
+
+    .hero-headline-title {
+        font-size: 52px;
+    }
+
+
+    /* SHOWCASE */
+
+    .showcase-card,
+    .showcase-card:nth-child(2) {
+
+        padding: 20px 40px 35px;
+
+        gap: 40px;
+
+        min-height: 500px;
+    }
+
+
+    .showcase-card-div {
+        width: 55%;
+    }
+
+
+    .showcase-card-picture {
+        width: 40%;
+
+        max-width: 380px;
+    }
+
+
+    .showcase-card-picture-img {
+        max-height: 430px;
+    }
+
+
+    .showcase-card-div-title {
+        font-size: 46px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .showcase-card-div-text {
+        font-size: 16px;
+
+        line-height: 160%;
+
+        margin-bottom: 15px;
+    }
+
+
+    .showcase-card-div-link {
+        font-size: 14px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .showcase-card-div-link::before {
+        width: 45px;
+
+        margin-right: 15px;
+    }
+
+
+    .showcase-card-div-noumder {
+        font-size: 110px;
+
+        top: -75px;
+
+        left: -40px;
+    }
+
+
+    /* BUTTONS */
+
+    .showcase-buttons {
+        padding-bottom: 20px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 0 40px 70px;
+
+        gap: 50px;
+    }
 }
-
 
 
 /* ============================================
@@ -541,328 +915,331 @@ body {
 
 @media (max-width: 576px) {
 
-  /* =========================
-     CONTAINER
-  ========================= */
+    /* HEADER */
 
-  .container {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
+    .header-nav {
+        padding: 25px 16px 0;
 
+        flex-direction: column;
 
-  /* =========================
-     HEADER
-  ========================= */
+        align-items: flex-start;
 
-  .header-nav {
-    padding: 25px 16px 0;
+        gap: 14px;
+    }
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 
-    gap: 16px;
-  }
+    .header-logo {
+        font-size: 22px;
+    }
 
-  /* Логотип */
 
-  .header-logo {
-    font-size: 22px;
-  }
+    .header-nav-div {
+        width: 100%;
 
-  /* Equipment / About us / Blog */
+        flex-direction: column;
 
-  .header-nav-div {
-    width: 100%;
+        align-items: flex-start;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+        gap: 7px;
+    }
 
-    gap: 8px;
-  }
 
-  .header-nav-div a {
-    font-size: 13px;
-    line-height: 1.3;
-  }
+    .header-nav-div a,
+    .header-nav-btn {
+        font-size: 13px;
+    }
 
-  /* Account */
 
-  .header-nav-btn {
-    display: flex;
-    align-items: center;
+    .header-nav-btn-icon {
+        width: 18px;
+        height: 18px;
 
-    font-size: 13px;
-    gap: 5px;
-  }
+        margin-right: 0;
+    }
 
-  .header-nav-btn-icon {
-    width: 18px;
-    height: 18px;
-    margin-right: 0;
-  }
 
+    /* HERO */
 
-  /* =========================
-     HERO
-  ========================= */
+    .hero {
+        padding: 80px 16px 100px;
 
-  .hero {
-    padding: 100px 16px 250px;
+        display: grid;
 
-    display: grid;
+        grid-template-columns: 30px minmax(0, 1fr) 30px;
 
-    grid-template-columns: 40px minmax(0, 1fr) 40px;
+        gap: 8px;
+    }
 
-    align-items: center;
-    gap: 10px;
-  }
 
+    .hero-media {
+        align-items: center;
 
-  /* =========================
-     FOLLOW US
-  ========================= */
+        gap: 15px;
+    }
 
-  .hero-media {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-    gap: 18px;
-  }
+    .hero-media-text {
+        font-size: 12px;
+    }
 
-  .hero-media-text {
-    writing-mode: vertical-rl;
-    font-size: 13px;
-  }
 
-  .hero-media-link {
-    display: block;
-  }
+    .hero-headline {
+        width: 100%;
 
-  .hero-meda-svg {
-    width: 20px;
-    height: 20px;
-  }
+        gap: 16px;
+    }
 
 
-  /* =========================
-     HERO HEADLINE
-  ========================= */
+    .hero-headline-link-hiking {
+        font-size: 10px;
 
-  .hero-headline {
-    width: 100%;
-    gap: 20px;
-  }
+        letter-spacing: 0.1em;
+    }
 
-  .hero-headline-link-hiking {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    white-space: nowrap;
-  }
 
-  .hero-headline-link-hiking::before {
-    width: 28px;
-    margin-right: 10px;
-  }
+    .hero-headline-link-hiking::before {
+        width: 25px;
 
-  .hero-headline-title {
-    font-size: 32px;
-    line-height: 115%;
-  }
+        margin-right: 8px;
+    }
 
-  .showcase-card-link {
-    font-size: 13px;
-    letter-spacing: 0.15em;
-    gap: 10px;
-  }
 
-  .showcase-card-link-icon {
-    width: 18px;
-    height: 18px;
-  }
+    .hero-headline-title {
+        font-size: 30px;
 
+        line-height: 115%;
+    }
 
-  /* =========================
-     START / 01 / 02 / 03
-  ========================= */
 
-  .hero-content-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    .hero-content-list {
+        gap: 10px;
+    }
 
-    gap: 14px;
-  }
 
-  .hero-content-list-text {
-    writing-mode: vertical-rl;
-    font-size: 13px;
-  }
+    .hero-content-list-text {
+        font-size: 12px;
+    }
 
-  .hero-content-list-link {
-    display: block;
-    font-size: 13px;
-  }
 
+    .hero-content-list-link {
+        font-size: 12px;
+    }
 
-  /* =========================
-     SHOWCASE CARDS
-  ========================= */
 
-  .showcase-card,
-  .showcase-card:nth-child(2) {
-    flex-direction: column;
+    /* =================================
+       SHOWCASE MOBILE
+    ================================= */
 
-    padding: 0 16px 100px;
+    .showcase-card,
+    .showcase-card:nth-child(2) {
 
-    gap: 45px;
-  }
+        flex-direction: column;
 
-  .showcase-card-div {
-    width: 100%;
-  }
+        align-items: stretch;
 
-  .showcase-card-picture {
-    width: 100%;
-    overflow: hidden;
-  }
+        justify-content: flex-start;
 
-  .showcase-card-picture-img {
-    width: 100%;
-    height: auto;
-  }
+        /*
+           ВАЖЛИВО:
+           дуже маленький padding.
+        */
+        padding: 15px 16px 20px;
 
+        gap: 20px;
 
-  /* =========================
-     SHOWCASE CATEGORY
-  ========================= */
+        min-height: auto;
+    }
 
-  .showcase-card-div-link {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    margin-bottom: 18px;
-  }
 
-  .showcase-card-div-link::before {
-    width: 30px;
-    margin-right: 10px;
-  }
+    /* TEXT */
 
+    .showcase-card-div {
+        width: 100%;
 
-  /* =========================
-     SHOWCASE TITLE
-  ========================= */
+        max-width: none;
+    }
 
-  .showcase-card-div-title {
-    font-size: 36px;
-    line-height: 115%;
 
-    margin-bottom: 20px;
-  }
+    /* CATEGORY */
 
+    .showcase-card-div-link {
+        font-size: 10px;
 
-  /* =========================
-     SHOWCASE TEXT
-  ========================= */
+        letter-spacing: 0.12em;
 
-  .showcase-card-div-text {
-    font-size: 15px;
-    line-height: 170%;
+        margin-bottom: 12px;
+    }
 
-    margin-bottom: 20px;
-  }
 
+    .showcase-card-div-link::before {
+        width: 25px;
 
-  /* =========================
-     BIG NUMBER
-  ========================= */
+        margin-right: 8px;
+    }
 
-  .showcase-card-div-noumder {
-    font-size: 90px;
 
-    top: -55px;
-    left: -10px;
-  }
+    /* TITLE */
 
+    .showcase-card-div-title {
+        font-size: 30px;
 
-  /* =========================
-     FOOTER
-  ========================= */
+        line-height: 115%;
 
-  .footer {
-    flex-direction: column;
+        margin-bottom: 12px;
+    }
 
-    padding: 0 16px 60px;
 
-    gap: 45px;
-  }
+    /* TEXT */
 
-  .footer-div-slogan {
-    width: 100%;
-  }
+    .showcase-card-div-text {
+        font-size: 14px;
 
-  .footer-logo {
-    font-size: 22px;
-    margin-bottom: 20px;
-  }
+        line-height: 155%;
 
-  .footer-div-slogan-text {
-    font-size: 15px;
-    line-height: 160%;
-  }
+        margin-bottom: 12px;
+    }
 
 
-  /* =========================
-     FOOTER LINKS
-  ========================= */
+    /* READ MORE */
 
-  .footer-div-links {
-    width: 100%;
+    .showcase-card-link {
+        font-size: 12px;
 
-    grid-template-columns: 1fr;
+        letter-spacing: 0.12em;
 
-    gap: 12px;
-  }
+        gap: 8px;
+    }
 
-  .footer-div-links-title {
-    font-size: 19px;
-  }
 
-  .footer-div-links-link {
-    font-size: 15px;
-    line-height: 160%;
-  }
+    .showcase-card-link-icon {
+        width: 16px;
+        height: 16px;
+    }
 
 
-  /* =========================
-     HOVER
-     На телефоні вимикаємо
-     сильне збільшення
-  ========================= */
+    /* NUMBER */
 
-  .header-nav-div a:hover,
-  .header-nav-btn:hover {
-    transform: none;
-  }
+    .showcase-card-div-noumder {
+        font-size: 75px;
 
-  .showcase-card-link:hover,
-  .showcase-card-div-title:hover {
-    transform: none;
-  }
+        top: -40px;
 
-  .showcase-card-picture:hover .showcase-card-picture-img {
-    transform: none;
-  }
+        left: -5px;
+    }
 
-  .header-logo:hover,
-  .footer-logo:hover {
-    transform: scale(1.1);
-  }
+
+    /* IMAGE */
+
+    .showcase-card-picture {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    .showcase-card-picture-img {
+        width: 100%;
+
+        /*
+           На телефоні картинка значно нижча.
+        */
+        height: 260px;
+
+        max-height: 260px;
+
+        object-fit: cover;
+    }
+
+
+    /* BUTTONS */
+
+    .showcase-buttons {
+        gap: 12px;
+
+        margin-top: 0;
+
+        padding-bottom: 20px;
+    }
+
+
+    .showcase-btn {
+        width: 42px;
+        height: 42px;
+
+        font-size: 18px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        flex-direction: column;
+
+        padding: 0 16px 50px;
+
+        gap: 35px;
+    }
+
+
+    .footer-logo {
+        font-size: 22px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .footer-div-slogan-text {
+        font-size: 14px;
+
+        line-height: 160%;
+    }
+
+
+    .footer-div-links {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    .footer-div-links-title {
+        font-size: 18px;
+    }
+
+
+    .footer-div-links-link {
+        font-size: 14px;
+
+        line-height: 160%;
+    }
+
+
+    /* HOVER OFF */
+
+    .header-nav-div a:hover,
+    .header-nav-btn:hover {
+        transform: none;
+    }
+
+
+    .showcase-card-link:hover,
+    .showcase-card-div-title:hover {
+        transform: none;
+    }
+
+
+    .showcase-card-picture:hover .showcase-card-picture-img {
+        transform: none;
+    }
+
+
+    .header-logo:hover,
+    .footer-logo:hover {
+        transform: scale(1.1);
+    }
 }
-
 
 
 /* ============================================
@@ -872,126 +1249,175 @@ body {
 
 @media (max-width: 380px) {
 
-  /* =========================
-     HEADER
-  ========================= */
-
-  .header-nav {
-    padding: 20px 10px 0;
-    gap: 14px;
-  }
-
-  .header-logo {
-    font-size: 20px;
-  }
-
-  .header-nav-div {
-    gap: 7px;
-  }
-
-  .header-nav-div a,
-  .header-nav-btn {
-    font-size: 12px;
-  }
-
-  .header-nav-btn-icon {
-    width: 16px;
-    height: 16px;
-  }
+    .header-nav {
+        padding: 20px 10px 0;
+    }
 
 
-  /* =========================
-     HERO
-  ========================= */
+    .hero {
+        padding: 60px 10px 80px;
 
-  .hero {
-    grid-template-columns: 30px minmax(0, 1fr) 30px;
+        grid-template-columns: 25px minmax(0, 1fr) 25px;
 
-    gap: 5px;
-
-    padding: 80px 10px 200px;
-  }
-
-  .hero-headline-title {
-    font-size: 28px;
-  }
-
-  .hero-headline-link-hiking {
-    font-size: 9px;
-    letter-spacing: 0.1em;
-  }
-
-  .hero-headline-link-hiking::before {
-    width: 20px;
-    margin-right: 6px;
-  }
-
-  .hero-media-text,
-  .hero-content-list-text {
-    font-size: 11px;
-  }
-
-  .hero-content-list {
-    gap: 10px;
-  }
-
-  .hero-content-list-link {
-    font-size: 11px;
-  }
+        gap: 5px;
+    }
 
 
-  /* =========================
-     SHOWCASE
-  ========================= */
-
-  .showcase-card,
-  .showcase-card:nth-child(2) {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 80px;
-
-    gap: 40px;
-  }
-
-  .showcase-card-div-title {
-    font-size: 30px;
-  }
-
-  .showcase-card-div-text {
-    font-size: 14px;
-  }
-
-  .showcase-card-div-link {
-    font-size: 10px;
-  }
-
-  .showcase-card-div-noumder {
-    font-size: 75px;
-
-    top: -45px;
-    left: -5px;
-  }
+    .hero-headline-title {
+        font-size: 27px;
+    }
 
 
-  /* =========================
-     FOOTER
-  ========================= */
+    .hero-headline-link-hiking {
+        font-size: 9px;
+    }
 
-  .footer {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 40px;
-  }
 
-  .footer-logo {
-    font-size: 20px;
-  }
+    .showcase-card,
+    .showcase-card:nth-child(2) {
 
-  .footer-div-links-title {
-    font-size: 17px;
-  }
+        padding-left: 10px;
+        padding-right: 10px;
 
-  .footer-div-links-link {
-    font-size: 13px;
-  }
+        padding-top: 10px;
+        padding-bottom: 15px;
+
+        gap: 15px;
+    }
+
+
+    .showcase-card-div-title {
+        font-size: 27px;
+    }
+
+
+    .showcase-card-div-text {
+        font-size: 13px;
+
+        line-height: 155%;
+    }
+
+
+    .showcase-card-picture-img {
+        height: 220px;
+
+        max-height: 220px;
+    }
+
+
+    .showcase-card-div-noumder {
+        font-size: 65px;
+
+        top: -35px;
+
+        left: -5px;
+    }
+
+
+    .showcase-btn {
+        width: 40px;
+        height: 40px;
+
+        font-size: 17px;
+    }
+
+
+    .footer {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 32px 24px;
+  background: #2c2c2c;
+  border-radius: 16px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.modal h3 {
+  margin: 0 30px 10px 0;
+  font-size: 24px;
+  color: #ffed8a;
+}
+
+.modal p {
+  color: #737373;
+  font-size: 14px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  cursor: pointer;
+  color: #737373;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.modal label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.modal input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 8px;
+  background: #6e6e6e;
+}
+
+.modal input:focus {
+  outline: 2px solid #777;
+  outline-offset: 1px;
+}
+
+.submit-btn {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #d3c577dc;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background:  #ffd87ed8;
+}
+
+#formMessage {
+  margin-bottom: 0;
 }

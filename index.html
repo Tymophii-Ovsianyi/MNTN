@@ -22,11 +22,11 @@
             <!-- Навігація -->
             <a class="header-logo" href="./index.html">MNTN</a>
             <div class="header-nav-div">
-            <a class="header-nav-link" href="">Equipment</a>
-            <a class="header-nav-link" href="">About us</a>
-            <a class="header-nav-link" href="">Blog</a>
+            <a class="header-nav-link"  href="https://ex.com.ua/?utm_source=chatgpt.com" target="_blank">Equipment</a>
+            <a class="header-nav-link" href="https://map.tourism.gov.ua/routes/" target="_blank">Routes</a>
+            <a class="header-nav-link" href="https://mandra.in.ua/" target="_blank">Guides</a>
             </div>
-            <button class="header-nav-btn">
+            <button class="header-nav-btn" id="accountBtn">
                 <svg width="24">
                     <use class="header-nav-btn-icon" href="./sprite.svg#icon-cart">
                     </use>
@@ -40,21 +40,52 @@
     <main class="container">
         <section class="hero">
             <!-- Hero -->
-            <div class="hero-media">
-                <p class="hero-media-text">Follow us</p>
-                <a class="hero-media-link" href="/">
-                    <svg class="hero-meda-svg" width="24">
-                        <use class="hero-media-use" href="./sprite.svg#icon-instagram" ></use>
-                    </svg>
-                </a>
+            
+<div class="hero-media">
+    <p class="hero-media-text">Explore</p>
 
-                <a class="hero-media-link" href="/">
-                    <svg class="hero-meda-svg" width="24">
-                        <use class="hero-media-use" href="./sprite.svg#icon-twitter" ></use>
-                    </svg>
-                </a>
-            </div>
-             
+    <a class="hero-media-link"
+        href="https://guide.karpaty.ua/uk/categories/marshruty"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Hiking routes">
+        <svg class="hero-media-icon" width="24" height="24">
+            <use href="./sprite.svg#icon-location2"></use>
+        </svg>
+    </a>
+
+    <a class="hero-media-link"
+        href="https://discover.ua/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Explore Ukraine">
+        <svg class="hero-media-icon" width="24" height="24">
+            <use href="./sprite.svg#icon-compass"></use>
+        </svg>
+    </a>
+
+    <a class="hero-media-link"
+        href="https://map.tourism.gov.ua/routes/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Hiking map">
+        <svg class="hero-media-icon" width="24" height="24">
+            <use href="./sprite.svg#icon-map"></use>
+        </svg>
+    </a>
+
+    <a class="hero-media-link"
+        href="https://mandra.in.ua/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Travel guides">
+        <svg class="hero-media-icon" width="24" height="24">
+            <use href="./sprite.svg#icon-flag"></use>
+        </svg>
+    </a>
+</div>
+
+                
             <div class="hero-headline">
                 <a class="hero-headline-link-hiking" href="/">A Hiking guide</a>
                 <h1 class="hero-headline-title">Be Prepared For The Mountains And Beyond!</h1>
@@ -69,79 +100,241 @@
 
             <div class="hero-content-list">
                 <p class="hero-content-list-text">Start</p>
-                <a class="hero-content-list-link" href="/">01</a>
-                <a class="hero-content-list-link" href="/">02</a>
-                <a class="hero-content-list-link" href="/">03</a>
+                <a class="hero-content-list-link" href="#card-one">01</a>
+                <a class="hero-content-list-link" href="#card-two">02</a>
+                <a class="hero-content-list-link" href="#card-three">03</a>
             </div>
         </section>
 
         <section class="showcase">
-            <ul class="showcase-list">
-                <li class="showcase-card">
-                    <div class="showcase-card-div">
-                        <p class="showcase-card-div-noumder">01</p>
-                        <a class="showcase-card-div-link" href="">GET STARTED</a>
-                        <h3 class="showcase-card-div-title">What level of  hiker are you?</h3>
-                        <p class="showcase-card-div-text">
-                            Determining what level of hiker you are can be an important tool when planning future hikes. This hiking level guide will help you plan hikes according to different hike ratings set by various websites like All Trails and Modern Hiker. What type of hiker are you - novice, moderate, advanced moderate, expert, or expert backpacker? 
-                        </p>
-                        <a class="showcase-card-link" href="/">read more
-                            <svg class="showcase-card-link-icon" width="20"  style="fill: #fbd784;">
-                                <use class="showcase-card-link-icon-use" href="./sprite.svg#icon-arrow_downward_24px"></use>
-                            </svg>
-                        </a>
-                    </div>
 
-                    <div class="showcase-card-picture">
-                        <img class="showcase-card-picture-img" src="./images/man-in-the-mountains.jpg" alt="man-in-the-mountains" >
-                    </div>
-                    
-                </li>
+    <div class="showcase-slider">
+        <ul class="showcase-list">
 
-                <li class="showcase-card">
-                    <div class="showcase-card-div">
-                        <p class="showcase-card-div-noumder">02</p>
-                        <a class="showcase-card-div-link" href="">Hiking Essentials</a>
-                        <h3 class="showcase-card-div-title">Picking the right Hiking Gear!</h3>
-                        <p class="showcase-card-div-text">
-                            The nice thing about beginning hiking is that you don't really need any special gear, you can probably get away with things you already have.
-                            Let's start with clothing. A typical mistake hiking beginners make is wearing jeans and regular clothes, which will get heavy and chafe wif they get sweaty or wet.
-                        </p>
-                        <a class="showcase-card-link" href="/">read more
-                            <svg class="showcase-card-link-icon" width="20"  style="fill: #fbd784;">
-                                <use class="showcase-card-link-icon-use" href="./sprite.svg#icon-arrow_downward_24px"></use>
-                            </svg>
-                        </a>
+            <!-- =========================
+                 CARD 01
+            ========================== -->
 
-                    </div>
+            <li class="showcase-card">
 
-                    <div class="showcase-card-picture">
-                        <img class="showcase-card-picture-img" src="./images/man-on-top-of-a-mountain.jpg" alt="man-on-top-of-a-mountain" >
-                    </div>
-                </li>
+                <div class="showcase-card-div">
 
-                <li class="showcase-card">
-                    <div class="showcase-card-div">
-                        <p class="showcase-card-div-noumder">03</p>
-                        <a class="showcase-card-div-link" href="/">where you go is the key</a>
-                        <h3 class="showcase-card-div-title">Understand Your Map & Timing</h3>
-                        <p class="showcase-card-div-text">
-                            To start, print out the hiking guide and map. If it's raining, throw them in a Zip-Lock bag. Read over the guide, study the map, and have a good idea of what to expect. I like to know what my next landmark is as I hike. For example, I'll read the guide and know that say, in a mile, I make a right turn at the junction..
-                        </p>
-                         <a class="showcase-card-link" href="/">read more
-                            <svg class="showcase-card-link-icon" width="20"  style="fill: #fbd784;">
-                                <use class="showcase-card-link-icon-use" href="./sprite.svg#icon-arrow_downward_24px"></use>
-                            </svg>
-                        </a>
-                    </div>
+                    <p class="showcase-card-div-noumder">
+                        01
+                    </p>
 
-                    <div class="showcase-card-picture">
-                        <img class="showcase-card-picture-img" src="./images/compass-in-hand.jpg" alt="compass-in-hand">
-                    </div>
-                </li>
-            </ul>
-        </section>
-            
+                    <a
+                        class="showcase-card-div-link"
+                        href=""
+                    >
+                        GET STARTED
+                    </a>
+
+                    <h3 class="showcase-card-div-title" id="card-one">
+                        What level of hiker are you?
+                    </h3>
+
+                    <p class="showcase-card-div-text">
+                        Determining what level of hiker you are can be an
+                        important tool when planning future hikes. This hiking
+                        level guide will help you plan hikes according to
+                        different hike ratings set by various websites like
+                        All Trails and Modern Hiker. What type of hiker are
+                        you - novice, moderate, advanced moderate, expert,
+                        or expert backpacker?
+                    </p>
+
+                    <a
+                        class="showcase-card-link"
+                        href="/"
+                    >
+                        read more
+
+                        <svg
+                            class="showcase-card-link-icon"
+                            width="20"
+                            height="20"
+                        >
+                            <use
+                                href="./sprite.svg#icon-arrow_downward_24px"
+                            ></use>
+                        </svg>
+                    </a>
+
+                </div>
+
+
+                <div class="showcase-card-picture">
+
+                    <img
+                        class="showcase-card-picture-img"
+                        src="./images/man-in-the-mountains.jpg"
+                        alt="man in the mountains"
+                    >
+
+                </div>
+
+            </li>
+
+
+            <!-- =========================
+                 CARD 02
+            ========================== -->
+
+            <li class="showcase-card">
+
+                <div class="showcase-card-div">
+
+                    <p class="showcase-card-div-noumder">
+                        02
+                    </p>
+
+                    <a
+                        class="showcase-card-div-link"
+                        href=""
+                    >
+                        Hiking Essentials
+                    </a>
+
+                    <h3 class="showcase-card-div-title" id="card-two">
+                        Picking the right Hiking Gear!
+                    </h3>
+
+                    <p class="showcase-card-div-text">
+                        The nice thing about beginning hiking is that you
+                        don't really need any special gear, you can probably
+                        get away with things you already have. Let's start
+                        with clothing. A typical mistake hiking beginners
+                        make is wearing jeans and regular clothes, which will
+                        get heavy and chafe if they get sweaty or wet.
+                    </p>
+
+                    <a
+                        class="showcase-card-link"
+                        href="/"
+                    >
+                        read more
+
+                        <svg
+                            class="showcase-card-link-icon"
+                            width="20"
+                            height="20"
+                        >
+                            <use
+                                href="./sprite.svg#icon-arrow_downward_24px"
+                            ></use>
+                        </svg>
+                    </a>
+
+                </div>
+
+
+                <div class="showcase-card-picture">
+
+                    <img
+                        class="showcase-card-picture-img"
+                        src="./images/man-on-top-of-a-mountain.jpg"
+                        alt="man on top of a mountain"
+                    >
+
+                </div>
+
+            </li>
+
+
+            <!-- =========================
+                 CARD 03
+            ========================== -->
+
+            <li class="showcase-card">
+
+                <div class="showcase-card-div">
+
+                    <p class="showcase-card-div-noumder">
+                        03
+                    </p>
+
+                    <a
+                        class="showcase-card-div-link"
+                        href="/"
+                    >
+                        where you go is the key
+                    </a>
+
+                    <h3 class="showcase-card-div-title" id="card-three">
+                        Understand Your Map & Timing
+                    </h3>
+
+                    <p class="showcase-card-div-text">
+                        To start, print out the hiking guide and map. If it's
+                        raining, throw them in a Zip-Lock bag. Read over the
+                        guide, study the map, and have a good idea of what to
+                        expect. I like to know what my next landmark is as I
+                        hike. For example, I'll read the guide and know that
+                        say, in a mile, I make a right turn at the junction.
+                    </p>
+
+                    <a
+                        class="showcase-card-link"
+                        href="/"
+                    >
+                        read more
+
+                        <svg
+                            class="showcase-card-link-icon"
+                            width="20"
+                            height="20"
+                        >
+                            <use
+                                href="./sprite.svg#icon-arrow_downward_24px"
+                            ></use>
+                        </svg>
+                    </a>
+
+                </div>
+
+
+                <div class="showcase-card-picture">
+
+                    <img
+                        class="showcase-card-picture-img"
+                        src="./images/compass-in-hand.jpg"
+                        alt="compass in hand"
+                    >
+
+                </div>
+
+            </li>
+
+        </ul>
+    </div>
+
+
+    <!-- =========================
+         SLIDER BUTTONS
+    ========================== -->
+
+    <div class="showcase-buttons">
+
+        <button
+            class="showcase-btn showcase-btn-prev"
+            type="button"
+            aria-label="Previous card"
+        >
+            ←
+        </button>
+
+        <button
+            class="showcase-btn showcase-btn-next"
+            type="button"
+            aria-label="Next card"
+        >
+            →
+        </button>
+
+    </div>
+
+</section>
     </main>
 
     <footer class="footer container">
@@ -160,8 +353,58 @@
         </div>
     </footer>
 
+    <div class="modal-overlay" id="accountModal">
 
+    <div class="modal">
 
+        <button
+            type="button"
+            class="modal-close"
+            id="closeModal"
+            aria-label="Close modal"
+        >
+            &times;
+        </button>
+
+        <h3>Personal Account</h3>
+
+        <p>Log in or create an account</p>
+
+        <form id="accountForm">
+
+            <label for="userName">Your name</label>
+
+            <input
+                type="text"
+                id="userName"
+                name="userName"
+                placeholder="Enter your name"
+                autocomplete="name"
+                required
+            >
+
+            <label for="userPhone">Phone number</label>
+
+            <input
+                type="tel"
+                id="userPhone"
+                name="userPhone"
+                placeholder="+380 XX XXX XX XX"
+                autocomplete="tel"
+                required
+            >
+
+            <button type="submit" class="submit-btn">
+                Log in or register
+            </button>
+
+            <p id="formMessage" role="status" aria-live="polite"></p>
+
+        </form>
+
+    </div>
+
+</div>
 
     <script src="script.js"></script>
 </body>
