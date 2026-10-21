@@ -1,186 +1,222 @@
-const showcaseList = document.querySelector('.showcase-list');
-const showcaseCards = document.querySelectorAll('.showcase-card');
+document.addEventListener("DOMContentLoaded", () => {
+  // =========================================
+  // SHOWCASE SLIDER
+  // =========================================
 
-const prevButton = document.querySelector('.showcase-btn-prev');
-const nextButton = document.querySelector('.showcase-btn-next');
+  const showcaseList = document.querySelector(".showcase-list");
+  const showcaseCards = document.querySelectorAll(".showcase-card");
+  const prevButton = document.querySelector(".showcase-btn-prev");
+  const nextButton = document.querySelector(".showcase-btn-next");
 
-let currentSlide = 0;
+  let currentSlide = 0;
 
+  function showSlide(index) {
+    if (!showcaseList || showcaseCards.length === 0) return;
 
-/* =========================================
-   SHOW SLIDE
-========================================= */
-
-function showSlide(index) {
-
-    /*
-        Якщо після останньої картки —
-        повертаємося на першу.
-    */
-
-    if (index >= showcaseCards.length) {
-        currentSlide = 0;
-    }
-
-    /*
-        Якщо перед першою —
-        переходимо на останню.
-    */
-
-    else if (index < 0) {
-        currentSlide = showcaseCards.length - 1;
-    }
-
-    else {
-        currentSlide = index;
-    }
-
-
-    /*
-        Рухаємо всі картки.
-
-        0%    = 01
-        -100% = 02
-        -200% = 03
-    */
+    currentSlide =
+      (index + showcaseCards.length) % showcaseCards.length;
 
     showcaseList.style.transform =
-        `translateX(-${currentSlide * 100}%)`;
-}
-
-
-/* =========================================
-   NEXT
-========================================= */
-
-nextButton.addEventListener('click', () => {
-
-    showSlide(currentSlide + 1);
-
-});
-
-
-/* =========================================
-   PREVIOUS
-========================================= */
-
-prevButton.addEventListener('click', () => {
-
-    showSlide(currentSlide - 1);
-
-});
-
-
-/* =========================================
-   SWIPE
-========================================= */
-
-let touchStartX = 0;
-let touchEndX = 0;
-
-
-showcaseList.addEventListener(
-    'touchstart',
-    (event) => {
-
-        touchStartX =
-            event.changedTouches[0].screenX;
-
-    },
-    { passive: true }
-);
-
-
-showcaseList.addEventListener(
-    'touchend',
-    (event) => {
-
-        touchEndX =
-            event.changedTouches[0].screenX;
-
-        handleSwipe();
-
-    },
-    { passive: true }
-);
-
-
-function handleSwipe() {
-
-    const swipeDistance =
-        touchEndX - touchStartX;
-
-
-    /*
-        Маленький рух не вважаємо свайпом.
-    */
-
-    if (Math.abs(swipeDistance) < 50) {
-        return;
-    }
-
-
-    /*
-        Свайп справа наліво:
-        01 → 02
-    */
-
-    if (swipeDistance < 0) {
-
-        showSlide(currentSlide + 1);
-
-    }
-
-
-    /*
-        Свайп зліва направо:
-        02 → 01
-    */
-
-    else {
-
-        showSlide(currentSlide - 1);
-
-    }
-}
-
-const accountBtn = document.getElementById("accountBtn");
-const modal = document.getElementById("accountModal");
-const closeBtn = document.getElementById("closeModal");
-const accountForm = document.getElementById("accountForm");
-const formMessage = document.getElementById("formMessage");
-
-accountBtn.addEventListener("click", () => {
-  modal.classList.add("active");
-});
-
-closeBtn.addEventListener("click", () => {
-  modal.classList.remove("active");
-});
-
-modal.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    modal.classList.remove("active");
+      `translateX(-${currentSlide * 100}%)`;
   }
-});
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    modal.classList.remove("active");
+  if (showcaseList && showcaseCards.length > 0) {
+    prevButton?.addEventListener("click", () => {
+      showSlide(currentSlide - 1);
+    });
+
+    nextButton?.addEventListener("click", () => {
+      showSlide(currentSlide + 1);
+    });
+
+    // Swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    showcaseList.addEventListener(
+      "touchstart",
+      (event) => {
+        touchStartX = event.changedTouches[0].screenX;
+      },
+      { passive: true }
+    );
+
+    showcaseList.addEventListener(
+      "touchend",
+      (event) => {
+        touchEndX = event.changedTouches[0].screenX;
+
+        const distance = touchEndX - touchStartX;
+
+        if (Math.abs(distance) < 50) return;
+
+        if (distance < 0) {
+          showSlide(currentSlide + 1);
+        } else {
+          showSlide(currentSlide - 1);
+        }
+      },
+      { passive: true }
+    );
+
+    showSlide(0);
   }
-});
 
-accountForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+  // =========================================
+  // ACCOUNT MODAL
+  // =========================================
 
-  const name = document.getElementById("userName").value.trim();
-  const phone = document.getElementById("userPhone").value.trim();
+  const accountBtn = document.getElementById("accountBtn");
+  const modal = document.getElementById("accountModal");
+  const closeBtn = document.getElementById("closeModal");
+  const accountForm = document.getElementById("accountForm");
+  const formMessage = document.getElementById("formMessage");
 
-  if (!name || !phone) {
-    formMessage.textContent = "Please fill in all fields.";
+  const userName = document.getElementById("userName");
+  const userPhone = document.getElementById("userPhone");
+
+  // Stop here if the account form is not present
+  if (
+    !accountBtn ||
+    !modal ||
+    !closeBtn ||
+    !accountForm ||
+    !formMessage ||
+    !userName ||
+    !userPhone
+  ) {
+    console.warn("Account form elements were not found in the HTML.");
     return;
   }
 
-  formMessage.textContent =
-    "Your details have been entered! The next step is phone verification.";
+  let closeTimer;
+
+  function closeModal() {
+    modal.classList.remove("active");
+
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+  }
+
+  function openModal() {
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+
+    modal.classList.add("active");
+    formMessage.textContent = "";
+  }
+
+  accountBtn.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+
+  // Close when clicking outside the modal content
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Close with Escape
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("active")) {
+      closeModal();
+    }
+  });
+
+  // =========================================
+  // NAME VALIDATION
+  // Letters, spaces, apostrophes and hyphens
+  // =========================================
+
+  const nameRegex =
+    /^[a-zA-ZÀ-ÖØ-öø-ÿА-Яа-яІіЇїЄєҐґ]+(?:[\s'-][a-zA-ZÀ-ÖØ-öø-ÿА-Яа-яІіЇїЄєҐґ]+)*$/;
+
+  userName.addEventListener("input", () => {
+    userName.value = userName.value.replace(
+      /[^a-zA-ZÀ-ÖØ-öø-ÿА-Яа-яІіЇїЄєҐґ\s'-]/g,
+      ""
+    );
+
+    formMessage.textContent = "";
+  });
+
+  // =========================================
+  // PHONE MASK: +380XXXXXXXXX
+  // =========================================
+
+  function formatPhone(value) {
+    let digits = value.replace(/\D/g, "");
+
+    // Remove the country code if it is already present
+    if (digits.startsWith("380")) {
+      digits = digits.slice(3);
+    } else if (digits.startsWith("0")) {
+      digits = digits.slice(1);
+    }
+
+    // Ukrainian phone numbers have 9 digits after +380
+    digits = digits.slice(0, 9);
+
+    return "+380" + digits;
+  }
+
+  userPhone.addEventListener("focus", () => {
+    if (!userPhone.value) {
+      userPhone.value = "+380";
+    }
+  });
+
+  userPhone.addEventListener("input", () => {
+    userPhone.value = formatPhone(userPhone.value);
+    formMessage.textContent = "";
+  });
+
+  // =========================================
+  // FORM SUBMISSION
+  // =========================================
+
+  accountForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = userName.value.trim();
+    const phone = userPhone.value.trim();
+
+    // Validate name
+    if (!nameRegex.test(name)) {
+      formMessage.textContent =
+        "Please enter a valid name using letters only.";
+      userName.focus();
+      return;
+    }
+
+    // Validate Ukrainian phone number
+    const phoneRegex = /^\+380\d{9}$/;
+
+    if (!phoneRegex.test(phone)) {
+      formMessage.textContent =
+        "Please enter a valid Ukrainian phone number.";
+      userPhone.focus();
+      return;
+    }
+
+    // Print customer details in the browser console
+    console.log("Customer name:", name);
+    console.log("Customer phone:", phone);
+
+    // Success message in English
+    formMessage.textContent =
+      "You're all set! Check your phone for your access link. Tap the link to continue to your account.";
+
+    // Close modal after 4 seconds
+    closeTimer = setTimeout(() => {
+      modal.classList.remove("active");
+      accountForm.reset();
+      formMessage.textContent = "";
+      closeTimer = null;
+    }, 4000);
+  });
 });
